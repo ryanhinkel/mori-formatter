@@ -1,0 +1,8 @@
+{
+  "name": "mori_logging",
+  "version": "1.0.0",
+  "description": "Provides a custom formatter for mori objects for Chrome devtools",
+  "main": "index.js",
+  "author": "Ryan Hinkel <ryanhinkel@gmail.com>",
+  "license": "MIT"
+}
