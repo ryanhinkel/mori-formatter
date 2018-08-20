@@ -88,5 +88,10 @@ const formatter = {
 }
 
 module.exports = () => {
+  if (window) {
   window.devtoolsFormatters = [formatter]
+    console.log('Custom Formatters enabled')
+  } else {
+    console.warn("Custom formatters not available in this environment")
+  }
 }
