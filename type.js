@@ -1,6 +1,6 @@
-import { isCollection, isMap, isVector, isSet, isList } from 'mori'
+const { isCollection, isMap, isVector, isSet, isList } = require('mori')
 
-export const getType = data => {
+const getType = data => {
   if (isCollection(data)) {
     if (isMap(data)) {
       return 'hashMap'
@@ -24,4 +24,8 @@ export const getType = data => {
       return 'object'
     }
   }
+}
+
+module.exports = {
+  getType
 }

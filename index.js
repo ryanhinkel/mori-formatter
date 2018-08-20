@@ -1,4 +1,4 @@
-import {
+const {
   isCollection,
   isMap,
   isVector,
@@ -9,19 +9,19 @@ import {
   mapIndexed,
   intoArray,
   isEmpty,
-} from 'mori'
+} = require('mori')
 
-import { getType } from './type'
-import {
+const { getType } = require('./type')
+const {
   headerStyles,
   bodyStyles,
   rowStyle,
   numberStyle,
   stringStyle,
   emptyStyle,
-} from './styles'
+} = require('./styles')
 
-export const renderHeader = data => {
+const renderHeader = data => {
   const type = getType(data)
   const attrs = { style: headerStyles[type] }
 
@@ -33,7 +33,7 @@ export const renderHeader = data => {
   }[type]
 }
 
-export const renderBody = data => {
+const renderBody = data => {
   const type = getType(data)
   const attrs = { style: bodyStyles[type] }
 
@@ -56,7 +56,7 @@ export const renderBody = data => {
   }
 }
 
-export const renderData = data => {
+const renderData = data => {
   if (typeof data === 'number') {
     return ['span', { style: numberStyle }, `${data}`]
   } else if (typeof data === 'string') {
@@ -66,7 +66,7 @@ export const renderData = data => {
   }
 }
 
-export const renderRow = (key, value) => {
+const renderRow = (key, value) => {
   const row = ['div', { style: rowStyle }, renderData(key)]
   if (value !== undefined) {
     row.push(' ')
@@ -75,7 +75,7 @@ export const renderRow = (key, value) => {
   return row
 }
 
-export const formatter = {
+const formatter = {
   header: data => {
     return isCollection(data) ? renderHeader(data) : null
   },
@@ -87,6 +87,6 @@ export const formatter = {
   body: renderBody,
 }
 
-export default () => {
-  window.devtoolsFormatters = formatter
+module.exports = () => {
+  window.devtoolsFormatters = [formatter]
 }
