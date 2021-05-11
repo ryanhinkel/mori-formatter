@@ -1,3 +1,3 @@
 # mori-formatter
 
-This is a chrome dev tools custom formatter for [mori](https://swannodette.github.io/mori/) datastructures.
+A [custom formatter](https://docs.google.com/document/d/1FTascZXT9cxfetuPRT2eXPQKXui4nWFivUnS_335T3U/preview#) for the Chrome dev tools [mori](https://swannodette.github.io/mori/) datastructures.
